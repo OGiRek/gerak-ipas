@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerak | Materi IPAS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e3e8f0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            margin-left: 22px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #eaf2ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 0.95;
+            margin-bottom: 22px;
+            color: #111827;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin-bottom: 38px;
+        }
+
+        .section-title span {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #e5eaf1;
+            box-shadow: 0 8px 25px rgba(30, 50, 80, 0.06);
+        }
+
+        .card .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #667085;
+        }
+
+        .formula {
+            margin-top: 25px;
+            background: #111827;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 8px 25px rgba(30, 50, 80, 0.06);
+        }
+
+        .example {
+            margin-top: 25px;
+            background: #eff6ff;
+            padding: 22px;
+            border-radius: 14px;
+        }
+
+        .conclusion {
+            background: #172033;
+            color: white;
+            text-align: center;
+        }
+
+        .conclusion .section-title {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .conclusion .section-title p {
+            color: #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .hero {
+                padding: 65px 6%;
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">IPAS • GERAK</div>
+        <div class="links">
+            <a href="#pengertian">Pengertian</a>
+            <a href="#jarak">Jarak</a>
+            <a href="#kelajuan">Kelajuan</a>
+            <a href="#jenis">Jenis Gerak</a>
+            <a href="#contoh">Contoh</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="tag">MATERI IPAS • FISIKA</div>
+            <h1>GERAK</h1>
+            <p>
+                Mengenal bagaimana benda berpindah posisi, bagaimana geraknya
+                diukur, dan bagaimana konsep gerak dapat ditemukan dalam
+                kehidupan sehari-hari.
+            </p>
+            <a class="button" href="#pengertian">Mulai Belajar ↓</a>
+        </div>
+    </header>
+
+    <section id="pengertian">
+        <div class="section-title">
+            <span>01 • Dasar</span>
+            <h2>Apa itu Gerak?</h2>
+            <p>
+                Gerak adalah perubahan posisi suatu benda terhadap titik acuan
+                dalam selang waktu tertentu.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="icon">📍</div>
+                <h3>Posisi</h3>
+                <p>
+                    Menunjukkan letak suatu benda terhadap titik atau objek
+                    yang dijadikan acuan.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⏱️</div>
+                <h3>Waktu</h3>
+                <p>
+                    Digunakan untuk mengetahui berapa lama suatu benda
+                    mengalami perubahan posisi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚗</div>
+                <h3>Titik Acuan</h3>
+                <p>
+                    Suatu benda dapat dianggap bergerak atau diam bergantung
+                    pada titik acuan yang digunakan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="jarak" style="background:#ffffff;">
+        <div class="section-title">
+            <span>02 • Pengukuran</span>
+            <h2>Jarak & Perpindahan</h2>
+            <p>
+                Keduanya berhubungan dengan perubahan posisi, tetapi memiliki
+                pengertian yang berbeda.
+            </p>
+        </div>
+
+        <div class="two-column">
+            <div class="info-box">
+                <h3>📏 Jarak</h3>
+                <p>
+                    Jarak adalah panjang seluruh lintasan yang ditempuh oleh
+                    suatu benda. Jarak merupakan besaran skalar.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>🧭 Perpindahan</h3>
+                <p>
+                    Perpindahan adalah perubahan posisi dari titik awal ke
+                    titik akhir dan memiliki arah.
+                </p>
+            </div>
+        </div>
+
+        <div class="example">
+            <strong>Contoh:</strong> Seseorang berjalan 5 meter ke timur lalu
+            3 meter ke barat. Jarak yang ditempuh adalah <strong>8 meter</strong>,
+            sedangkan perpindahannya adalah <strong>2 meter ke timur</strong>.
+        </div>
+    </section>
+
+    <section id="kelajuan">
+        <div class="section-title">
+            <span>03 • Perhitungan</span>
+            <h2>Kelajuan & Kecepatan</h2>
+            <p>
+                Konsep ini digunakan untuk mengetahui seberapa cepat suatu
+                benda bergerak.
+            </p>
+        </div>
+
+        <div class="two-column">
+            <div class="info-box">
+                <h3>⚡ Kelajuan</h3>
+                <p>
+                    Kelajuan adalah perbandingan antara jarak yang ditempuh
+                    dengan waktu yang diperlukan.
+                </p>
+                <div class="formula">v = s / t</div>
+            </div>
+
+            <div class="info-box">
+                <h3>🧭 Kecepatan</h3>
+                <p>
+                    Kecepatan adalah perbandingan antara perpindahan dengan
+                    waktu dan memperhatikan arah gerak benda.
+                </p>
+                <div class="formula">v = Δs / t</div>
+            </div>
+        </div>
+
+        <div class="example">
+            <strong>Contoh perhitungan:</strong><br>
+            Sebuah sepeda menempuh jarak 100 meter dalam waktu 20 detik.
+            <br><br>
+            Kelajuan = 100 ÷ 20 = <strong>5 m/s</strong>.
+        </div>
+    </section>
+
+    <section id="jenis" style="background:#ffffff;">
+        <div class="section-title">
+            <span>04 • Klasifikasi</span>
+            <h2>Jenis-Jenis Gerak</h2>
+            <p>
+                Gerak dapat dibedakan berdasarkan bentuk lintasan dan
+                karakteristik pergerakannya.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="icon">➡️</div>
+                <h3>Gerak Lurus</h3>
+                <p>
+                    Gerak benda yang memiliki lintasan berbentuk garis lurus.
+                    Gerak lurus dapat berupa gerak horizontal maupun vertikal.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">↔️</div>
+                <h3>Gerak Horizontal</h3>
+                <p>
+                    Gerak benda pada arah mendatar atau sejajar dengan
+                    permukaan tanah. Contohnya mobil yang bergerak di jalan lurus.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">↕️</div>
+                <h3>Gerak Vertikal</h3>
+                <p>
+                    Gerak benda pada arah tegak lurus terhadap permukaan tanah,
+                    seperti benda yang dilempar ke atas atau jatuh ke bawah.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⏩</div>
+                <h3>GLB</h3>
+                <p>
+                    Gerak Lurus Beraturan adalah gerak pada lintasan lurus
+                    dengan kecepatan tetap dan percepatan nol.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>GLBB</h3>
+                <p>
+                    Gerak Lurus Berubah Beraturan adalah gerak lurus dengan
+                    percepatan tetap sehingga kecepatannya berubah secara teratur.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⬆️</div>
+                <h3>GVA</h3>
+                <p>
+                    Gerak Vertikal ke Atas adalah gerak benda yang dilempar
+                    ke atas dengan kecepatan awal tertentu dan dipengaruhi gravitasi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⬇️</div>
+                <h3>GVB</h3>
+                <p>
+                    Gerak Vertikal ke Bawah adalah gerak benda yang bergerak
+                    ke bawah dengan kecepatan awal tertentu dan dipengaruhi gravitasi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🍎</div>
+                <h3>GJB</h3>
+                <p>
+                    Gerak Jatuh Bebas adalah gerak benda yang jatuh tanpa
+                    kecepatan awal dan hanya dipengaruhi oleh gravitasi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔄</div>
+                <h3>Gerak Melingkar</h3>
+                <p>
+                    Gerak benda yang lintasannya berbentuk lingkaran.
+                    Contohnya ujung jarum jam atau roda yang berputar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contoh">
+        <div class="section-title">
+            <span>05 • Kehidupan Nyata</span>
+            <h2>Gerak di Sekitar Kita</h2>
+            <p>
+                Konsep gerak bukan hanya ada di buku. Kita menemukannya hampir
+                setiap hari.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🚗</div>
+                <h3>Mobil</h3>
+                <p>Mobil mengalami perubahan posisi terhadap jalan.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚲</div>
+                <h3>Sepeda</h3>
+                <p>Sepeda bergerak ketika diberi gaya melalui kayuhan.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚽</div>
+                <h3>Bola</h3>
+                <p>Bola dapat bergerak lurus maupun membentuk lintasan parabola.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌍</div>
+                <h3>Bumi</h3>
+                <p>Bumi melakukan rotasi pada porosnya dan revolusi mengelilingi Matahari.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <div class="section-title">
+            <span>Kesimpulan</span>
+            <h2>Gerak ada di mana-mana.</h2>
+            <p>
+                Gerak merupakan perubahan posisi benda terhadap titik acuan.
+                Untuk mempelajarinya, kita dapat menggunakan konsep jarak,
+                perpindahan, waktu, kelajuan, dan kecepatan.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        Materi IPAS • Gerak | Muhammad Athallah Huda Farzana | 26
+    </footer>
+
+</body>
+</html>
